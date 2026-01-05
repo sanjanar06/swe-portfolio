@@ -37,10 +37,10 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-serif mb-4">Find Me Online</h2>
-          <p className="text-muted-foreground max-w-lg mx-auto">
+          <p className="text-muted-foreground max-w-lg">
             Whether I'm squashing bugs on LeetCode, pushing pixels on GitHub, or pretending to be a professional on LinkedIn — this is where my digital life unfolds.
           </p>
         </motion.div>
