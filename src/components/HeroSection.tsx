@@ -1,9 +1,20 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolioData";
 import { ArrowDown, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const HeroSection = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      toast("📅 Upcoming Conferences", {
+        description: "Harvard WECode & WE Local — catch me there!",
+        duration: 6000,
+      });
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <section id="about" className="min-h-screen flex items-center justify-center pt-20 px-6">
       <div className="max-w-4xl mx-auto">
@@ -76,25 +87,6 @@ const HeroSection = () => {
             </span>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="flex flex-wrap gap-2"
-          >
-            <span className="px-3 py-1.5 text-xs rounded-full bg-secondary text-secondary-foreground border border-border">
-              AnitaB.org Member
-            </span>
-            <span className="px-3 py-1.5 text-xs rounded-full bg-secondary text-secondary-foreground border border-border">
-              Rewrite the Code Member
-            </span>
-            <span className="px-3 py-1.5 text-xs rounded-full bg-secondary text-secondary-foreground border border-border">
-              📍 Harvard WECode
-            </span>
-            <span className="px-3 py-1.5 text-xs rounded-full bg-secondary text-secondary-foreground border border-border">
-              📍 WE Local
-            </span>
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
