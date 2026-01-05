@@ -22,7 +22,7 @@ const ProjectsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 text-center"
+          className="mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-serif mb-4">Projects</h2>
           <p className="text-muted-foreground">
@@ -41,7 +41,7 @@ const ProjectsSection = () => {
               onClick={() => setSelectedProject(project)}
               className="group text-left"
             >
-              <div className="pinterest-card p-5 bg-card border border-border rounded-xl h-full flex flex-col">
+              <div className="pinterest-card p-5 bg-card border border-border rounded-xl h-full flex flex-col relative overflow-hidden">
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <span className="text-2xl">{project.icon}</span>
                   <Badge 
@@ -54,8 +54,11 @@ const ProjectsSection = () => {
                 <h3 className="font-serif text-lg mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-sm text-muted-foreground line-clamp-2">
+                <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
                   {project.description}
+                </p>
+                <p className="text-xs text-muted-foreground/60 mt-3 group-hover:text-primary/60 transition-colors">
+                  Click to learn more →
                 </p>
               </div>
             </motion.button>

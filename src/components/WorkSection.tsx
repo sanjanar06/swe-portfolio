@@ -66,14 +66,19 @@ const WorkSection = () => {
                           {job.period}
                         </span>
                         {expandedIndex === index ? (
-                          <ChevronUp className="w-5 h-5 text-muted-foreground" />
+                          <ChevronUp className="w-5 h-5 text-primary" />
                         ) : (
-                          <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                          <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                         )}
                       </div>
                     </div>
                     <p className="text-primary/80 text-sm mb-2">{job.role}</p>
                     <p className="text-muted-foreground text-sm">{job.description}</p>
+                    {expandedIndex !== index && (
+                      <p className="text-xs text-muted-foreground/60 mt-3 group-hover:text-primary/60 transition-colors">
+                        Click to learn more →
+                      </p>
+                    )}
                   </div>
                 </div>
 
