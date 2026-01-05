@@ -1,18 +1,28 @@
 import { motion } from "framer-motion";
-import { usePersona } from "@/contexts/PersonaContext";
-import { personaDescriptions } from "@/data/portfolioData";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
-  const { persona, setPersona } = usePersona();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setIsDark(isDarkMode);
+  }, []);
+
+  const toggleTheme = () => {
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    document.documentElement.classList.toggle("dark", newIsDark);
+  };
 
   const navItems = [
     { label: "About", href: "#about" },
     { label: "Work", href: "#work" },
     { label: "Projects", href: "#projects" },
-    { label: "Blog", href: "#blog" },
+    { label: "Writing", href: "#writing" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -44,27 +54,35 @@ const Header = () => {
           ))}
         </div>
 
-        {/* Persona Badge */}
-        {persona && (
-          <motion.button
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            onClick={() => setPersona(null as any)}
-            className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-primary/10 
-                       text-primary rounded-full text-sm hover:bg-primary/20 transition-colors"
+        {/* Theme Toggle */}
+        <div className="hidden md:flex items-center">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="rounded-full"
           >
-            <span>{personaDescriptions[persona].emoji}</span>
-            <span className="mono text-xs">{personaDescriptions[persona].label}</span>
-          </motion.button>
-        )}
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </Button>
+        </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="rounded-full"
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </Button>
+          <button
+            className="p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -85,18 +103,6 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            {persona && (
-              <button
-                onClick={() => {
-                  setPersona(null as any);
-                  setMobileMenuOpen(false);
-                }}
-                className="flex items-center gap-2 text-primary text-sm"
-              >
-                <span>{personaDescriptions[persona].emoji}</span>
-                <span>Change persona</span>
-              </button>
-            )}
           </div>
         </motion.div>
       )}

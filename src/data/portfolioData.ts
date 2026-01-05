@@ -24,17 +24,24 @@ export const workExperience = [
   },
 ];
 
+export type ProjectTag = "Hackathon" | "Academic" | "In Progress" | "Personal";
+
 export const projects = [
   {
-    title: "DeepFake Detection Based on Phoneme-Viseme Mismatch",
-    description: "Designed and implemented a novel-pipeline to discern if a given video of a subject talking is real or fake by calculating the percentage of phoneme-viseme mismatch.",
-    image: "/projects/deepfake.png",
-    tags: ["Machine Learning", "Computer Vision", "Python"],
+    title: "DeepFake Detection",
+    description: "Phoneme-viseme mismatch pipeline to detect fake videos",
+    tag: "Academic" as ProjectTag,
+    icon: "🎭",
     links: {
       github: "https://github.com/rameeznaufal/deepfake-detection",
       medium: "https://medium.com/@sanjanareji06",
       kaggle: "https://www.kaggle.com/datasets/reubensuju/celeb-df-v2/data",
       report: "https://drive.google.com/file/d/1gtegDZRVy76hzHjjUSTo2kLeXs-rQXIp/view?",
+    },
+    details: {
+      fullTitle: "DeepFake Detection Based on Phoneme-Viseme Mismatch",
+      fullDescription: "Designed and implemented a novel-pipeline to discern if a given video of a subject talking is real or fake by calculating the percentage of phoneme-viseme mismatch.",
+      tags: ["Machine Learning", "Computer Vision", "Python"],
     },
   },
 ];
@@ -69,52 +76,19 @@ export const blogPosts = [
 
 export const socials = {
   linkedin: {
-    url: "https://linkedin.com/in/sanjanareji",
+    url: "https://www.linkedin.com/in/sanjana-kallingal/",
     description: "A software engineer without LinkedIn? Impossible. Drop a message on the chat!",
   },
   github: {
-    url: "https://github.com/sanjanareji",
+    url: "https://github.com/sanjanar06",
     description: "Don't check out the green boxes—read through my repositories instead.",
   },
   leetcode: {
-    url: "https://leetcode.com/sanjanareji",
+    url: "https://leetcode.com/u/sanjana_r06/",
     description: "I \"definitely\" don't do LeetCode just for the DSA rounds. Haha.",
   },
   medium: {
     url: "https://medium.com/@sanjanareji06",
     description: "Where I write about tech, engineering case studies, and random thoughts.",
-  },
-};
-
-export const extras = [
-  {
-    title: "System Design Case Studies",
-    description: "Deep dives into real-world system architectures",
-    status: "Coming Soon",
-  },
-  {
-    title: "Engineering Blog",
-    description: "Technical articles and tutorials",
-    status: "In Progress",
-  },
-];
-
-export type PersonaType = "recruiter" | "stalker" | "fellow";
-
-export const personaDescriptions: Record<PersonaType, { label: string; emoji: string; tagline: string }> = {
-  recruiter: {
-    label: "Recruiter",
-    emoji: "💼",
-    tagline: "Here to check my qualifications? Let me show you the highlights.",
-  },
-  stalker: {
-    label: "Stalker",
-    emoji: "🔍",
-    tagline: "Go ahead, dig deep. I have nothing to hide (mostly).",
-  },
-  fellow: {
-    label: "Fellow Dev",
-    emoji: "👩‍💻",
-    tagline: "One of us! Let's geek out together.",
   },
 };
