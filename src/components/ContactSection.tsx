@@ -40,7 +40,7 @@ const ContactSection = () => {
           className="mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-serif mb-4">Find Me Online</h2>
-          <p className="text-muted-foreground max-w-lg">
+          <p className="text-muted-foreground max-w-lg text-left">
             Whether I'm squashing bugs on LeetCode, pushing pixels on GitHub, or pretending to be a professional on LinkedIn — this is where my digital life unfolds.
           </p>
         </motion.div>
