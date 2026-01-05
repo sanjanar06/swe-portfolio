@@ -5,11 +5,10 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setIsDark(isDarkMode);
+    document.documentElement.classList.add("dark");
   }, []);
 
   const toggleTheme = () => {
