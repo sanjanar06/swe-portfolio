@@ -1,25 +1,9 @@
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolioData";
-import { usePersona } from "@/contexts/PersonaContext";
 import { ArrowDown, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
-  const { persona } = usePersona();
-
-  const getGreeting = () => {
-    switch (persona) {
-      case "recruiter":
-        return "Welcome, Recruiter!";
-      case "stalker":
-        return "I see you, curious one...";
-      case "fellow":
-        return "Hey there, fellow dev! 👋";
-      default:
-        return "Hello, I am";
-    }
-  };
-
   return (
     <section id="about" className="min-h-screen flex items-center justify-center pt-20 px-6">
       <div className="max-w-4xl mx-auto">
@@ -36,7 +20,7 @@ const HeroSection = () => {
               transition={{ delay: 0.2 }}
               className="text-primary mono text-sm"
             >
-              {getGreeting()}
+              Hello, I am
             </motion.p>
 
             <motion.h1
