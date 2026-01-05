@@ -38,7 +38,7 @@
     --radius: 0.75rem;
     
     /* Custom tokens */
-    --highlight: 45 90% 70%;
+    --highlight: 45 85% 65%;
     --notion-brown: 28 45% 45%;
     --notion-orange: 25 80% 55%;
     --notion-pink: 340 65% 55%;
@@ -55,7 +55,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
+.dark {
     --background: 30 15% 8%;
     --foreground: 35 20% 90%;
     
@@ -83,6 +83,9 @@
     --border: 30 10% 18%;
     --input: 30 10% 18%;
     --ring: 25 80% 55%;
+    
+    /* Dark mode highlight - softer amber */
+    --highlight: 35 60% 35%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
