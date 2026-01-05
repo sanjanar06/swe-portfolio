@@ -41,9 +41,9 @@ const ContactSection = () => {
     {
       key: "rewrite",
       icon: Users,
-      label: "Rewrite the Code",
-      description: "Empowering college women in tech through community.",
-      url: "https://rewritethecode.org/",
+      label: "Rewriting the Code",
+      description: "Empowering women in tech globally.",
+      url: "https://rewritingthecode.org/",
     },
   ];
 
