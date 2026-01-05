@@ -22,7 +22,7 @@ const ProjectsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-serif mb-4">Projects</h2>
           <p className="text-muted-foreground">
@@ -57,7 +57,14 @@ const ProjectsSection = () => {
                 <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
                   {project.description}
                 </p>
-                <p className="text-xs text-muted-foreground/60 mt-3 group-hover:text-primary/60 transition-colors">
+                <div className="flex flex-wrap gap-1 mt-3">
+                  {project.details.tags.slice(0, 3).map((tag) => (
+                    <Badge key={tag} variant="secondary" className="text-[10px] px-1.5 py-0">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+                <p className="text-xs text-muted-foreground/60 mt-2 group-hover:text-primary/60 transition-colors">
                   Click to learn more →
                 </p>
               </div>

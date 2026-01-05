@@ -11,7 +11,7 @@ const BlogSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-serif mb-4">Writing & Case Studies</h2>
           <p className="text-muted-foreground">
