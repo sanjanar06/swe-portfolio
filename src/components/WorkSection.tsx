@@ -3,6 +3,7 @@ import { workExperience } from "@/data/portfolioData";
 import { Building2, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import wellsfargoArch from "@/assets/wellsfargo-architecture.png";
 
 const WorkSection = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
@@ -18,7 +19,7 @@ const WorkSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-serif mb-4">Work Experience</h2>
           <p className="text-muted-foreground">
@@ -125,7 +126,7 @@ const WorkSection = () => {
                         {job.architectureImage && (
                           <div className="mt-6">
                             <img
-                              src={job.architectureImage}
+                              src={job.architectureImage === "wellsfargo-architecture" ? wellsfargoArch : job.architectureImage}
                               alt="Architecture diagram"
                               className="w-full rounded-lg border border-border"
                               onError={(e) => {

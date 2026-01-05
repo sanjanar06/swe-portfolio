@@ -58,7 +58,7 @@ export const workExperience = [
         content: "As a huge fan of the Silicon Valley series, I jokingly introduced daily stand-ups to my sub-team at the start. To my surprise, these brief 10-minute check-ins turned out to be super effective, especially as our team grew larger. Before long, I found myself organizing Kanban boards, documenting everything (yes, everything), and making sure that no one was duplicating work or building the same graph twice. As the project scaled, I took on a more proactive role, working to align goals across three subteams: Kafka Team (real-time ingestion), Spark Team (streaming transformation), and Dashboard Team (bringing it all to life, where I was based). To keep everything running smoothly, I set up discord channels, organized weekly syncs, and used the kanban board and github project board to ensure everyone stayed aligned. The process of collaborating with different sub-teams helped maintain clarity and ensured no one was left behind, especially as things got more complex. During COVID, I had limited access to internal systems, which meant I had to build a standalone analytics platform from scratch. This turned out to be a blessing because it gave me autonomy and a deeper understanding of working in a remote-first environment."
       }
     ],
-    architectureImage: "/work/analytics-arch.png"
+    architectureImage: "wellsfargo-architecture"
   },
 ];
 
