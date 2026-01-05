@@ -60,6 +60,43 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap gap-2"
+          >
+            <span className="px-3 py-1.5 text-xs rounded-full bg-primary/10 text-primary border border-primary/20">
+              F1 Student Visa
+            </span>
+            <span className="px-3 py-1.5 text-xs rounded-full bg-primary/10 text-primary border border-primary/20">
+              Authorized to work in US
+            </span>
+            <span className="px-3 py-1.5 text-xs rounded-full bg-primary/10 text-primary border border-primary/20">
+              Requires H1B sponsorship
+            </span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="flex flex-wrap gap-2"
+          >
+            <span className="px-3 py-1.5 text-xs rounded-full bg-secondary text-secondary-foreground border border-border">
+              AnitaB.org Member
+            </span>
+            <span className="px-3 py-1.5 text-xs rounded-full bg-secondary text-secondary-foreground border border-border">
+              Rewrite the Code Member
+            </span>
+            <span className="px-3 py-1.5 text-xs rounded-full bg-secondary text-secondary-foreground border border-border">
+              📍 Harvard WECode
+            </span>
+            <span className="px-3 py-1.5 text-xs rounded-full bg-secondary text-secondary-foreground border border-border">
+              📍 WE Local
+            </span>
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
