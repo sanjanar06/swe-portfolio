@@ -1,19 +1,18 @@
-import { useEffect } from "react";
+import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolioData";
-import { ArrowDown, FileText } from "lucide-react";
+import { ArrowDown, FileText, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
+
+const conferences = [
+  { name: "Harvard WECode", expiry: new Date("2026-02-21") },
+  { name: "WE Local Columbus, Ohio", expiry: new Date("2026-03-13") },
+];
 
 const HeroSection = () => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      toast("📅 Upcoming Conferences", {
-        description: "Harvard WECode & WE Local — catch me there!",
-        duration: 6000,
-      });
-    }, 2000);
-    return () => clearTimeout(timer);
+  const activeConferences = useMemo(() => {
+    const now = new Date();
+    return conferences.filter((c) => c.expiry >= now);
   }, []);
   return (
     <section id="about" className="min-h-screen flex items-center justify-center pt-20 px-6">
@@ -87,7 +86,25 @@ const HeroSection = () => {
             </span>
           </motion.div>
 
-
+          {activeConferences.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-accent/50 border border-accent"
+            >
+              <CalendarDays className="h-5 w-5 text-primary shrink-0" />
+              <p className="text-sm">
+                <span className="font-medium">Catch me at:</span>{" "}
+                {activeConferences.map((c, i) => (
+                  <span key={c.name}>
+                    {c.name}
+                    {i < activeConferences.length - 1 && " • "}
+                  </span>
+                ))}
+              </p>
+            </motion.div>
+          )}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
