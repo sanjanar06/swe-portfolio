@@ -11,12 +11,10 @@ const BlogSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-serif mb-4">Writing & Case Studies</h2>
-          <p className="text-muted-foreground">
-            Thoughts, tutorials, and deep dives into system design ✍️
-          </p>
+          <p className="text-muted-foreground">Thoughts, tutorials, and deep dives into system design</p>
         </motion.div>
 
         {/* Coming Soon - System Design Case Studies */}
@@ -37,8 +35,8 @@ const BlogSection = () => {
             </div>
             <h3 className="font-serif text-lg mb-2">System Design Case Studies</h3>
             <p className="text-sm text-muted-foreground mb-3">
-              Deep dives into real-world system architectures — how companies like Netflix, Uber, and Stripe 
-              built their systems. Stay tuned for detailed breakdowns published on Medium.
+              Deep dives into real-world system architectures — how companies like Netflix, Uber, and Stripe built their
+              systems. Stay tuned for detailed breakdowns published on Medium.
             </p>
             <a
               href={socials.medium.url}
@@ -68,9 +66,7 @@ const BlogSection = () => {
             >
               <div className="pinterest-card flex items-center justify-between gap-4 p-5 bg-card border border-border rounded-xl">
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-medium group-hover:text-primary transition-colors truncate">
-                    {post.title}
-                  </h3>
+                  <h3 className="font-medium group-hover:text-primary transition-colors truncate">{post.title}</h3>
                   <div className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
                     <Calendar size={12} />
                     <span className="mono text-xs">{post.date}</span>
