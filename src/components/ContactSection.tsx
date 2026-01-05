@@ -37,11 +37,12 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-serif mb-4">Find Me Online</h2>
-          <p className="text-muted-foreground max-w-lg text-left">
-            Whether I'm squashing bugs on LeetCode, pushing pixels on GitHub, or pretending to be a professional on LinkedIn — this is where my digital life unfolds.
+          <p className="text-muted-foreground">
+            Whether I'm squashing bugs on LeetCode, pushing pixels on GitHub, or pretending to be a professional on
+            LinkedIn — this is where my digital life unfolds.
           </p>
         </motion.div>
 
@@ -68,9 +69,7 @@ const ContactSection = () => {
                     className="text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
                   />
                 </div>
-                <h3 className="text-lg font-serif mb-2 group-hover:text-primary transition-colors">
-                  {social.label}
-                </h3>
+                <h3 className="text-lg font-serif mb-2 group-hover:text-primary transition-colors">{social.label}</h3>
                 <p className="text-sm text-muted-foreground">{social.description}</p>
               </div>
             </motion.a>
