@@ -102,27 +102,27 @@ export const blogPosts = [
   {
     title: "Guide to SpringBoot OpenSource Project in CodeBaseShow: PART 1",
     date: "Mar 09, 2024",
-    url: "https://medium.com/@sanjanareji06",
+    url: "https://medium.com/@sanjanareji06/detailed-study-of-springboot-opensource-project-in-codebaseshow-part-1-49f494c8ff13",
   },
   {
     title: "Part I: Playo Clone with SpringBoot & MySQL",
     date: "Jan 18, 2024",
-    url: "https://medium.com/@sanjanareji06",
+    url: "https://medium.com/@sanjanareji06/part-i-playo-clone-with-springboot-mysql-b81cc647b32b",
   },
   {
     title: "Who else other than Rose survived?",
     date: "Jun 21, 2023",
-    url: "https://medium.com/@sanjanareji06",
+    url: "https://medium.com/@sanjanareji06/who-else-other-than-rose-survived-6139a2ffe679",
   },
   {
     title: "How to reload trained models on Kaggle",
     date: "Jun 15, 2023",
-    url: "https://medium.com/@sanjanareji06",
+    url: "https://medium.com/@sanjanareji06/how-to-reload-trained-models-on-kaggle-d2125e65ff92",
   },
   {
     title: "Data With Danny: Case Study 2",
     date: "Jun 15, 2023",
-    url: "https://medium.com/@sanjanareji06",
+    url: "https://medium.com/@sanjanareji06/data-with-danny-case-study-2-50cf38658d1e",
   },
 ];
 
