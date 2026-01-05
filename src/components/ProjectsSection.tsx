@@ -6,27 +6,27 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const ProjectsSection = () => {
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null);
 
   const tagColors: Record<string, string> = {
-    "Hackathon": "bg-accent/10 text-accent border-accent/20",
-    "Academic": "bg-primary/10 text-primary border-primary/20",
+    Hackathon: "bg-accent/10 text-accent border-accent/20",
+    Academic: "bg-primary/10 text-primary border-primary/20",
     "In Progress": "bg-notion-green/20 text-foreground border-notion-green/30",
-    "Personal": "bg-notion-blue/20 text-foreground border-notion-blue/30",
+    Personal: "bg-notion-blue/20 text-foreground border-notion-blue/30",
   };
 
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-24 px-6 bg-secondary/30">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mb-12 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-serif mb-4">Projects</h2>
           <p className="text-muted-foreground">
-            Sometimes I work on projects not scoped, sprinted or story pointed haha 🚀
+            Sometimes I work on projects not scoped, sprinted or story pointed haha
           </p>
         </motion.div>
 
@@ -41,32 +41,15 @@ const ProjectsSection = () => {
               onClick={() => setSelectedProject(project)}
               className="group text-left"
             >
-              <div className="pinterest-card p-5 bg-card border border-border rounded-xl h-full flex flex-col relative overflow-hidden">
+              <div className="pinterest-card p-5 bg-card border border-border rounded-xl h-full flex flex-col">
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <span className="text-2xl">{project.icon}</span>
-                  <Badge 
-                    variant="outline" 
-                    className={`text-xs shrink-0 ${tagColors[project.tag] || ""}`}
-                  >
+                  <Badge variant="outline" className={`text-xs shrink-0 ${tagColors[project.tag] || ""}`}>
                     {project.tag}
                   </Badge>
                 </div>
-                <h3 className="font-serif text-lg mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1 mt-3">
-                  {project.details.tags.slice(0, 3).map((tag) => (
-                    <Badge key={tag} variant="secondary" className="text-[10px] px-1.5 py-0">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-                <p className="text-xs text-muted-foreground/60 mt-2 group-hover:text-primary/60 transition-colors">
-                  Click to learn more →
-                </p>
+                <h3 className="font-serif text-lg mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                <p className="text-sm text-muted-foreground line-clamp-2">{project.description}</p>
               </div>
             </motion.button>
           ))}
@@ -77,22 +60,15 @@ const ProjectsSection = () => {
             <DialogHeader>
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-3xl">{selectedProject?.icon}</span>
-                <Badge 
-                  variant="outline" 
-                  className={`text-xs ${tagColors[selectedProject?.tag || ""] || ""}`}
-                >
+                <Badge variant="outline" className={`text-xs ${tagColors[selectedProject?.tag || ""] || ""}`}>
                   {selectedProject?.tag}
                 </Badge>
               </div>
-              <DialogTitle className="text-2xl font-serif">
-                {selectedProject?.details.fullTitle}
-              </DialogTitle>
+              <DialogTitle className="text-2xl font-serif">{selectedProject?.details.fullTitle}</DialogTitle>
             </DialogHeader>
-            
+
             <div className="space-y-4">
-              <p className="text-muted-foreground leading-relaxed">
-                {selectedProject?.details.fullDescription}
-              </p>
+              <p className="text-muted-foreground leading-relaxed">{selectedProject?.details.fullDescription}</p>
 
               <div className="flex flex-wrap gap-2">
                 {selectedProject?.details.tags.map((tag) => (
